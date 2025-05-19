@@ -2,6 +2,8 @@
 
 A Chrome extension that adds a "Summarize" button to YouTube video pages, which uses Google's Gemini API to generate concise summaries of videos.
 
+![Demo](demo.png){ width=60% }
+
 ## Features
 
 - Adds a "Summarize" button next to the like counter on YouTube video pages
