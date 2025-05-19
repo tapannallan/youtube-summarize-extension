@@ -1,0 +1,240 @@
+/* Summarize button styles */
+.yt-summarize-btn {
+  background-color: #065fd4;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  z-index: 2000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  font-family: Roboto, Arial, sans-serif;
+  /* Make sure it doesn't get wider than needed */
+  max-width: fit-content;
+  /* Match YouTube's like button style */
+  line-height: normal;
+  position: relative;
+  /* Ensure it floats left (required for older YouTube layouts) */
+  float: left;
+}
+
+.yt-summarize-btn:hover {
+  background-color: #0356c2;
+}
+
+.yt-summarize-btn.loading {
+  background-color: #e5e5e5;
+  color: #606060;
+  cursor: default;
+}
+
+/* Summary popup styles */
+.yt-summary-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  max-width: 90vw;
+  max-height: 80vh;
+  z-index: 9999;
+  display: none;
+  overflow: hidden;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.yt-summary-popup.show {
+  display: block;
+}
+
+.yt-summary-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.yt-summary-popup-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0f0f0f;
+}
+
+#yt-summary-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #606060;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.yt-summary-popup-content {
+  padding: 20px;
+  max-height: calc(80vh - 80px);
+  overflow-y: auto;
+}
+
+#yt-summary-loading {
+  text-align: center;
+  color: #606060;
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+#yt-summary-result {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #0f0f0f;
+  white-space: normal;
+}
+
+/* Markdown styling */
+#yt-summary-result h1,
+#yt-summary-result h2,
+#yt-summary-result h3,
+#yt-summary-result h4,
+#yt-summary-result h5,
+#yt-summary-result h6 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+#yt-summary-result h1 {
+  font-size: 18px;
+}
+
+#yt-summary-result h2 {
+  font-size: 16px;
+}
+
+#yt-summary-result h3,
+#yt-summary-result h4,
+#yt-summary-result h5,
+#yt-summary-result h6 {
+  font-size: 15px;
+}
+
+#yt-summary-result p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#yt-summary-result ul,
+#yt-summary-result ol {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#yt-summary-result li {
+  margin-bottom: 5px;
+}
+
+#yt-summary-result a {
+  color: #065fd4;
+  text-decoration: none;
+}
+
+#yt-summary-result a:hover {
+  text-decoration: underline;
+}
+
+#yt-summary-result blockquote {
+  border-left: 3px solid #e5e5e5;
+  padding-left: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  color: #606060;
+}
+
+#yt-summary-result code {
+  background-color: #f5f5f5;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+#yt-summary-result pre {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 10px 0;
+}
+
+#yt-summary-result pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+#yt-summary-result hr {
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+  margin: 16px 0;
+}
+
+#yt-summary-result .error {
+  color: #cc0000;
+}
+
+/* Floating button styles */
+.yt-summarize-floating-container {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 9000;
+}
+
+.yt-summarize-floating-btn {
+  background-color: #065fd4;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.yt-summarize-floating-btn:hover {
+  background-color: #0356c2;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .yt-summary-popup {
+    width: 90vw;
+  }
+  
+  .yt-summarize-floating-container {
+    top: auto;
+    bottom: 70px;
+    right: 20px;
+  }
+}

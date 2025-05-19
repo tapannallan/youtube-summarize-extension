@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Summarizer</title>
+  <style>
+    body {
+      width: 300px;
+      font-family: Roboto, Arial, sans-serif;
+      padding: 16px;
+      margin: 0;
+    }
+    
+    h1 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 0;
+      margin-bottom: 16px;
+      color: #0f0f0f;
+    }
+    
+    .form-group {
+      margin-bottom: 16px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #606060;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #d3d3d3;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    
+    button {
+      background-color: #065fd4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    button:hover {
+      background-color: #0356c2;
+    }
+    
+    .status {
+      margin-top: 16px;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: none;
+    }
+    
+    .success {
+      background-color: #e6f4ea;
+      color: #137333;
+      display: block;
+    }
+    
+    .error {
+      background-color: #fce8e6;
+      color: #c5221f;
+      display: block;
+    }
+    
+    .instructions {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #606060;
+      line-height: 1.4;
+    }
+    
+    .key-info {
+      background-color: #f8f8f8;
+      border-radius: 4px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .key-status {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    
+    .key-icon {
+      color: #137333;
+      font-size: 18px;
+      margin-right: 8px;
+    }
+    
+    .masked-key {
+      font-family: monospace;
+      font-size: 14px;
+      color: #606060;
+      word-break: break-all;
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .button-group button {
+      flex: 1;
+    }
+    
+    .danger {
+      background-color: #fff;
+      color: #c5221f;
+      border: 1px solid #c5221f;
+    }
+    
+    .danger:hover {
+      background-color: #fce8e6;
+    }
+  </style>
+</head>
+<body>
+  <h1>YouTube Summarizer (Gemini 2.0 Flash)</h1>
+  
+  <div id="no-key-section">
+    <div class="form-group">
+      <label for="api-key">Gemini 2.0 API Key:</label>
+      <input type="text" id="api-key" placeholder="Enter your Gemini API key">
+    </div>
+    
+    <button id="save-btn">Save API Key</button>
+  </div>
+  
+  <div id="has-key-section" style="display: none;">
+    <div class="key-info">
+      <div class="key-status">
+        <span class="key-icon">✓</span>
+        <span>API Key is saved and synced</span>
+      </div>
+      <div class="masked-key" id="masked-key"></div>
+    </div>
+    <div class="button-group">
+      <button id="edit-btn">Edit Key</button>
+      <button id="delete-btn" class="danger">Delete Key</button>
+    </div>
+  </div>
+  
+  <div id="status" class="status"></div>
+  
+  <div class="instructions">
+    <p>To use this extension:</p>
+    <ol>
+      <li>Enter your Gemini API key above</li>
+      <li>Go to any YouTube video</li>
+      <li>Click the "Summarize" button to generate a summary</li>
+    </ol>
+    <p>To get a Gemini 2.0 API key, visit <a href="https://ai.google.dev/" target="_blank">Google AI Studio</a>.</p>
+    <p><small>Your API key is securely synced across browsers where you're signed in with the same Google account.</small></p>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
